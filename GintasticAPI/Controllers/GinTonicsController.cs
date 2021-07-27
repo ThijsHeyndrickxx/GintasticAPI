@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 namespace GintasticAPI.Controllers
 {
+    [ApiConventionType(typeof(DefaultApiConventions))]
+    [Produces("application/json")]
     [Route("api/[controller]")]
     [ApiController]
     public class GinTonicsController : ControllerBase
@@ -18,7 +20,7 @@ namespace GintasticAPI.Controllers
         }
         // GET: api/Recipes
         [HttpGet]
-        public IEnumerable<Gintonic> GetGintonics()
+        public IEnumerable<Gintonic> GetAll()
         {
             return _gintonicRepository.GetAll().OrderBy(r => r.Name);
         }
