@@ -20,5 +20,14 @@ namespace GintasticAPI.Data.Repositories
         {
             return _gintonics.ToList();
         }
+        public void Add(Gintonic gintonic)
+        {
+            _gintonics.Add(gintonic);
+            
+        }
+        public void SaveChanges()
+        {
+            this._context.SaveChanges();
+        }
     }
 }

@@ -10,5 +10,12 @@ namespace GintasticAPI.DTOs
     {
         [Required]
         public string Name { get; set; }
+
+        [Required]
+        public string Description { get; set;}
+
+        [Required]
+
+        public string Taste { get; set;}
     }
 }

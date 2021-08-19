@@ -19,11 +19,16 @@ namespace GintasticAPI.Data
             base.OnModelCreating(builder);
             
             builder.Entity<Gintonic>().Property(r => r.Name).IsRequired().HasMaxLength(50);
+            builder.Entity<Gintonic>().Property(r => r.Taste).IsRequired();
+            builder.Entity<Gintonic>().Property(r => r.Description).IsRequired().HasMaxLength(5000);
+
 
             //Another way to seed the database
             builder.Entity<Gintonic>().HasData(
-                 new Gintonic { Id = 1, Name = "Gintonic dry"},
-                 new Gintonic { Id = 2, Name = "Gintonic sweet"}
+                 new Gintonic { Id = 1, Name = "Grapefruit & pink peppercorn", Taste = "Sweet", Description="Fill your glass with ice, add 30 ml of grapefruit juice," +
+                 "40 ml of gin, 200ml of tonic and finish of with a handfull of pink peppercorns to finish it off. "},
+                 new Gintonic { Id = 2, Name = "Cucumber, Lime, Elderflower & Basil Gin", Taste = "Mediterranean", Description="Fill your glass with ice, add 50 ml of gin, 125 ml of tonic" +
+                 "15 ml of elderflower liqeur, half a lime, half a cucumber and 2 to 3 leaves of fresh basil." }
   );
         }
 

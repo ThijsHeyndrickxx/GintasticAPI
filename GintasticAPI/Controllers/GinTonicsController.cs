@@ -18,11 +18,17 @@ namespace GintasticAPI.Controllers
         {
             _gintonicRepository = context;
         }
-        // GET: api/Recipes
+        
         [HttpGet]
         public IEnumerable<Gintonic> GetAll()
         {
-            return _gintonicRepository.GetAll().OrderBy(r => r.Name);
+            return _gintonicRepository.GetAll();
+        }
+        [HttpPost]
+        public void Add(Gintonic gintonic)
+        {
+            _gintonicRepository.Add(gintonic);
+            _gintonicRepository.SaveChanges();
         }
     }
     

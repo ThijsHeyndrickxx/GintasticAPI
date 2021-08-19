@@ -8,5 +8,7 @@ namespace GintasticAPI.Models
     public interface IGintonicRepository
     {
         IEnumerable<Gintonic> GetAll();
+        void Add(Gintonic gintonic);
+        void SaveChanges();
     }
 }
