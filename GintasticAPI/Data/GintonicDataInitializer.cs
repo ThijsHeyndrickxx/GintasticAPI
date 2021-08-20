@@ -14,6 +14,7 @@ namespace GintasticAPI.Data
         }
         public void InitializeData()
         {
+            _dbContext.Database.EnsureDeleted();
             _dbContext.Database.EnsureCreated();
             
         }

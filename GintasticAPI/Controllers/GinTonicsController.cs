@@ -25,7 +25,7 @@ namespace GintasticAPI.Controllers
             return _gintonicRepository.GetAll();
         }
         [HttpPost]
-        public void Add(Gintonic gintonic)
+        public void Add([FromBody] Gintonic gintonic)
         {
             _gintonicRepository.Add(gintonic);
             _gintonicRepository.SaveChanges();
